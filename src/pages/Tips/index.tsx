@@ -26,7 +26,7 @@ const boxContent: { title: string; image: string }[] = [
         }
     ]
     return (
-        <Box sx={{ px: { xs: 2, md: 8 }, py: { xs: 4, md: 2 } }}>
+        <Box sx={{ px: { xs: 2, md: 8 }, py: { xs: 4, md: 2 } ,width:'100%' , maxWidth:'1100px',mx:'auto'}}>
             <Box
                 sx={{
                     display: 'flex',

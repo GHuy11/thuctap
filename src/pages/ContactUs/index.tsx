@@ -13,7 +13,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FacebookIcon from '@mui/icons-material/Facebook';
 function Contact() {
     return (
-        <Box sx={{ px: { xs: 2, md: 8 }, py: { xs: 4, md: 2 } }}>
+        <Box sx={{ px: { xs: 2, md: 8 }, py: { xs: 4, md: 2 },width:'100%' , maxWidth:'1100px',mx:'auto' }}>
             <Box
                 sx={{
                     display: 'flex',

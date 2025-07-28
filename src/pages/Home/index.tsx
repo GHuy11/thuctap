@@ -20,7 +20,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const Home = () => {
 
-    const boxContent: { title: string; image: string }[]= [
+    const boxContent: { title: string; image: string }[] = [
         {
             title: 'International Art Museum',
             image: '/images/Rectangle1.png',
@@ -39,21 +39,56 @@ const Home = () => {
         },
     ];
     return (
-        <Box sx={{ px: { xs: 2, md: 8 }, py: { xs: 4, md: 2 } }}>
+        <Box sx={{
+            px: { xs: 2, md: 8 }, py: { xs: 4, md: 2 }, width: '100%', maxWidth: {
+                xs: '90%',       // ≤600px (iPhone)
+                sm: '90%',        // 600–899px (Tablet như Galaxy Tab A7)
+                md: '1100px',     // ≥900px (Laptop)
+            }
+            , mx: 'auto'
+        }}>
             <Box
                 sx={{
                     display: 'flex',
-                    flexDirection: { xs: 'column', md: 'row' },
-                    alignItems: 'center',
-                    gap: 6,
+                    flexDirection: {
+                        xs: 'column', // iPhone
+                        sm: 'column', // iPad
+                        md: 'row', // Desktop
+                    },
+                    alignItems: {
+                        xs: 'center',
+                        sm: 'center',
+                        md: 'flex-start',
+                    },
+                    gap: {
+                        xs: 4,
+                        sm: 5,
+                        md: 6,
+                    },
+                    px: {
+                        xs: 2,
+                        sm: 4,
+                        md: 8,
+                    },
+                    py: {
+                        xs: 4,
+                        sm: 6,
+                        md: 8,
+                    },
                 }}
             >
-                {/* Left side - Text content */}
-                <Box sx={{ flex: 1 }}>
-                    <Typography variant="h3" fontWeight="bold" gutterBottom>
+                {/* Left Side */}
+                <Box sx={{ flex: 1, textAlign: { xs: 'center', md: 'left' } }}>
+                    <Typography variant="h4" fontWeight="bold" gutterBottom sx={{ fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' } }}>
                         Investing <br /> Simplified
                     </Typography>
-                    <Typography variant="body1" color="text.secondary" mb={4}>
+
+                    <Typography
+                        variant="body1"
+                        color="text.secondary"
+                        mb={4}
+                        sx={{ fontSize: { xs: '0.9rem', sm: '1rem' }, px: { xs: 1, sm: 2, md: 0 } }}
+                    >
                         Take command of your financial future and transcend to the life you've always envisioned.
                         Unleash potential and master the art of investment with unparalleled ease and precision.
                     </Typography>
@@ -61,70 +96,99 @@ const Home = () => {
                     <Paper
                         elevation={3}
                         sx={{
-                            p: 2,
+                            p: { xs: 2, sm: 3 },
                             borderRadius: 3,
                             display: 'flex',
                             flexDirection: 'column',
                             gap: 2,
                             maxWidth: 500,
+                            mx: { xs: 'auto', md: 0 },
                             backgroundColor: '#f2f4f8',
                         }}
                     >
-                        <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
                             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                                 <Typography variant="h6" color="primary">★</Typography>
                                 <Typography variant="h6">4.9</Typography>
                             </Box>
-                            <Button variant="contained" sx={{ alignSelf: 'flex-start', mt: 1 }}>
+                            <Button variant="contained" sx={{ mt: { xs: 2, sm: 0 } }}>
                                 Get Started
                             </Button>
                         </Box>
 
-                        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
                             <Box sx={{ maxWidth: 380 }}>
-                                <Typography fontWeight="bold">
-                                    Discover a World of Investment Opportunities:Start Growing Your Wealth Now
+                                <Typography fontWeight="bold" sx={{ fontSize: { xs: '0.9rem', sm: '1rem' } }}>
+                                    Discover a World of Investment Opportunities: Start Growing Your Wealth Now
                                 </Typography>
                             </Box>
 
-                            <IconButton sx={{ bgcolor: 'primary.main', color: 'white', ml: 2 }}>
+                            <IconButton sx={{ bgcolor: 'primary.main', color: 'white', ml: 2, mt: { xs: 2, sm: 0 } }}>
                                 <PlayArrowIcon />
                             </IconButton>
                         </Box>
                     </Paper>
                 </Box>
 
-                <Box sx={{ flex: 1, position: 'relative', textAlign: 'center' }}>
+                {/* Right Side */}
+                <Box sx={{ flex: 1, position: 'relative', textAlign: 'center', mt: { xs: 4, sm: 4, md: 0 } }}>
                     <img
                         src="/images/Rectangle.png"
                         alt="Man on phone"
                         style={{ borderRadius: '8px', width: '100%', maxWidth: 450 }}
                     />
-                    <Box sx={{ maxWidth: '50%', position: 'absolute', bottom: 20, right: 80, display: { xs: 'none', md: 'block' } }}>
-                        <img src='/images/Frame 206.png'
-                            alt=''
-                            style={{ width: '100%' }}
-                        />
+                    <Box
+                        sx={{
+                            maxWidth: '50%',
+                            position: 'absolute',
+                            bottom: 20,
+                            right: 80,
+                            display: { xs: 'none', sm: 'none', md: 'block' },
+                        }}
+                    >
+                        <img src="/images/Frame 206.png" alt="" style={{ width: '100%' }} />
                     </Box>
                 </Box>
             </Box>
-            <Box sx={{ mt: 10, px: {  md: 10 } }}>
-                <Box sx={{ display: { md: 'flex' }, justifyContent: "space-between" }}>
-                    <Typography variant="h4" fontWeight="bold" sx={{ textAlign: { xs: 'left', md: 'center' }, mb: 4 }} >
+
+            <Box sx={{ mt: 10, px: { xs: 2, sm: 4, md: 20 } }}>
+                {/* Heading + Description */}
+                <Box
+                    sx={{
+                        display: { xs: 'block', md: 'flex', },
+                        justifyContent: "space-between",
+                        alignItems: 'center',
+                        textAlign: { xs: 'center', md: 'left' },
+                        gap: { xs: 2, md: 4 },
+                    }}
+                >
+                    <Typography
+                        variant="h4"
+                        fontWeight="bold"
+                        sx={{
+                            textAlign: { xs: 'center', sm: 'center', md: 'left' },
+                            mb: { xs: 2, sm: 3, md: 4 },
+                        }}
+                    >
                         Explore Recent <br /> Opportunities
                     </Typography>
-                    <Box >
-                        <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 500 }}>
-                            Unlock a Universe of Investment Opportunities.<br /> Step into a realm where growth and opportunity converge.
+
+                    <Box sx={{ textAlign: { xs: 'center', md: 'left' }, px: { xs: 1, sm: 2, md: 0 } }}>
+                        <Typography
+                            variant="body1"
+                            color="text.secondary"
+                            sx={{ maxWidth: 500, mx: { xs: 'auto', md: 0 } }}
+                        >
+                            Unlock a Universe of Investment Opportunities.<br />
+                            Step into a realm where growth and opportunity converge.
                             Our innovative platform opens doors to a curated selection of high-potential investments.
                         </Typography>
                         <Button sx={{ mt: 2 }} endIcon={<PlayArrowIcon />}>
                             Learn More
                         </Button>
                     </Box>
-
                 </Box>
-                {/* Cards container */}
+
                 <Box
                     sx={{
                         display: 'flex',
@@ -138,12 +202,18 @@ const Home = () => {
                         <Paper
                             key={index}
                             sx={{
-                                width: { xs: '100%', sm: 'calc(50% - 12px)', md: 'calc(47% - 18px)' },
+                                width: {
+                                    xs: '100%',
+                                    sm: 'calc(45% - 12px)',
+                                    md: 'calc(47% - 18px)',
+                                },
+                                // mx:'auto',
+
                                 borderRadius: 3,
                                 p: 2,
-                                display: {
-                                    xs: 'block', md: 'flex',
-                                },
+                                display: 'flex',
+                                flexDirection: { xs: 'column', md: 'row' },
+                                gap: 2,
                             }}
                             elevation={2}
                         >
@@ -154,30 +224,38 @@ const Home = () => {
                                 sx={{
                                     borderRadius: '12px',
                                     width: { xs: '100%', md: '50%' },
-                                    height: 200,
+                                    height: { xs: 180, md: 200 },
                                     objectFit: 'cover',
                                 }}
                             />
-                            <Box sx={{ marginLeft: '10px' }}>
-                                <Typography variant='h6' sx={{ fontSize: 16, fontStyle: 'Bold', fontWeight: 700 }} >
+                            <Box sx={{ flex: 1, mt: { xs: 2, md: 0 } }}>
+                                <Typography variant="h6" fontWeight={700} fontSize={16}>
                                     {item.title}
                                 </Typography>
                                 <Box mt={1} sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
                                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                                         <MonetizationOnIcon sx={{ fontSize: 15 }} />
-                                        <Typography variant="body2" color="text.secondary">Valuation $5M</Typography>
+                                        <Typography variant="body2" color="text.secondary">
+                                            Valuation $5M
+                                        </Typography>
                                     </Box>
                                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                                         <PeopleIcon sx={{ fontSize: 15 }} />
-                                        <Typography variant="body2" color="text.secondary">75 Investors</Typography>
+                                        <Typography variant="body2" color="text.secondary">
+                                            75 Investors
+                                        </Typography>
                                     </Box>
                                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                                         <TrackChangesIcon sx={{ fontSize: 15 }} />
-                                        <Typography variant="body2" color="text.secondary">Target $500,000</Typography>
+                                        <Typography variant="body2" color="text.secondary">
+                                            Target $500,000
+                                        </Typography>
                                     </Box>
                                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                                         <LocationOnIcon sx={{ fontSize: 15 }} />
-                                        <Typography variant="body2" color="text.secondary">London, UK</Typography>
+                                        <Typography variant="body2" color="text.secondary">
+                                            London, UK
+                                        </Typography>
                                     </Box>
                                 </Box>
                                 <Button size="small" sx={{ mt: 1 }} endIcon={<PlayArrowIcon />}>
@@ -188,6 +266,7 @@ const Home = () => {
                     ))}
                 </Box>
             </Box>
+
 
             <Box sx={{ px: { xs: 2, md: 20 } }}>
                 <Box
@@ -233,8 +312,8 @@ const Home = () => {
                             md: 'left',
                         },
                     }}>
-                        <Box sx={{ maxWidth: {xs:'100%', md:170} }}>
-                            <Box sx={{ width: 2, height: 2, backgroundColor: '#355070', p: 2, borderRadius: '10px', mb: 2,mx:{xs:'auto',md:0} }}></Box>
+                        <Box sx={{ maxWidth: { xs: '100%', md: 170 } }}>
+                            <Box sx={{ width: 2, height: 2, backgroundColor: '#355070', p: 2, borderRadius: '10px', mb: 2, mx: { xs: 'auto', md: 0 } }}></Box>
                             <Typography variant="h6" fontWeight={700} sx={{ mb: 2 }}>
                                 Live Market Insights
                             </Typography>
@@ -242,8 +321,8 @@ const Home = () => {
                                 Gain an edge with real-time updates and expert analyses
                             </Typography>
                         </Box>
-                        <Box sx={{ maxWidth: {xs:'100%', md:200} }}>
-                            <Box sx={{ width: 2, height: 2, backgroundColor: '#355070', p: 2, borderRadius: '10px', mb: 2,mx:{xs:'auto',md:0} }}></Box>
+                        <Box sx={{ maxWidth: { xs: '100%', md: 200 } }}>
+                            <Box sx={{ width: 2, height: 2, backgroundColor: '#355070', p: 2, borderRadius: '10px', mb: 2, mx: { xs: 'auto', md: 0 } }}></Box>
                             <Typography variant="h6" fontWeight={700} sx={{ mb: 2 }}>
                                 Ventures Across Diverse Industries
                             </Typography>
@@ -251,8 +330,8 @@ const Home = () => {
                                 Step into a variety of sectors, each offering unique and lucrative
                             </Typography>
                         </Box>
-                        <Box sx={{ maxWidth: {xs:'100%', md:220} }}>
-                            <Box sx={{ width: 2, height: 2, backgroundColor: '#355070', p: 2, borderRadius: '10px', mb: 2,mx:{xs:'auto',md:0} }}></Box>
+                        <Box sx={{ maxWidth: { xs: '100%', md: 220 } }}>
+                            <Box sx={{ width: 2, height: 2, backgroundColor: '#355070', p: 2, borderRadius: '10px', mb: 2, mx: { xs: 'auto', md: 0 } }}></Box>
                             <Typography variant="h6" fontWeight={700} sx={{ mb: 2 }}>
                                 Revolutionary Investment Solutions
                             </Typography>
@@ -361,7 +440,7 @@ const Home = () => {
                 <Typography variant="body1" color="text.secondary" mb={4}>
                     Navigate through the global investment landscape with our expert guidance, ensuring every decision is calculated and potent.F                </Typography>
 
-                <Box sx={{ maxWidth: {md:250}, mb: 4, display: 'flex',flexDirection: { xs: 'column', md: 'row' }, justifyContent: 'space-between', gap: 4 }}>
+                <Box sx={{ maxWidth: { md: 244 }, mb: 4, display: 'flex', flexDirection: { xs: 'column', md: 'row' }, justifyContent: 'space-between', gap: 3 }}>
                     <img
                         src="/images/Frame 48.png"
                         alt="Investment discussion"
@@ -405,7 +484,7 @@ const Home = () => {
                         backgroundColor: '#f2f4f8',
                         borderRadius: 4,
                         p: 4,
-                        position: 'relative',minHeight:300
+                        position: 'relative', minHeight: 300
                     }}
                 >
                     <Typography variant="h5" fontWeight="bold" gutterBottom >
@@ -522,7 +601,7 @@ const Home = () => {
             </Box>
 
 
-        </Box>
+        </Box >
     );
 };
 

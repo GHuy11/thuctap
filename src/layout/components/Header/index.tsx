@@ -44,8 +44,8 @@ const Header = () => {
 
     return (
         <>
-            <AppBar position="static" color="transparent" elevation={0}>
-                <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <AppBar position="static" color="transparent" elevation={0} sx={{px:6, width:'100%' , maxWidth:'1300px',mx:'auto'}}>
+                <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center',  }}>
                     {/* Left: Logo */}
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 4 }}>
                         <Box

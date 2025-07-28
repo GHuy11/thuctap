@@ -27,10 +27,9 @@ const Footer = () => {
     },
   ]
   return (
-    <Box sx={{ py: 8, px: { xs: 2, md: 25 }, backgroundColor: '#fff' }}>
+    <Box sx={{ py: 8, px: {xs:2,  md: 20 }, backgroundColor: '#fff', width:'100%' , maxWidth:{xs:'350px',md:'800px'},mx:'auto'}}>
       <Stack direction={{ xs: 'column', md: 'row' }} spacing={6} justifyContent="space-between">
 
-        {/* Logo + Social */}
         <Box>
           <Box
             sx={{
