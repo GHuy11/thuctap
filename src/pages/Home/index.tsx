@@ -40,12 +40,7 @@ const Home = () => {
     ];
     return (
         <Box sx={{
-            px: { xs: 2, md: 8 }, py: { xs: 4, md: 2 }, width: '100%', maxWidth: {
-                xs: '90%',       // ≤600px (iPhone)
-                sm: '90%',        // 600–899px (Tablet như Galaxy Tab A7)
-                md: '1100px',     // ≥900px (Laptop)
-            }
-            , mx: 'auto'
+           
         }}>
             <Box
                 sx={{
@@ -66,7 +61,6 @@ const Home = () => {
                         md: 6,
                     },
                     px: {
-                        xs: 2,
                         sm: 4,
                         md: 8,
                     },
@@ -77,9 +71,9 @@ const Home = () => {
                     },
                 }}
             >
-                {/* Left Side */}
+                
                 <Box sx={{ flex: 1, textAlign: { xs: 'center', md: 'left' } }}>
-                    <Typography variant="h4" fontWeight="bold" gutterBottom sx={{ fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' } }}>
+                    <Typography variant="h4" fontWeight="bold" gutterBottom sx={{ fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' }, textAlign:{xs:'left'} }}>
                         Investing <br /> Simplified
                     </Typography>
 
@@ -87,7 +81,9 @@ const Home = () => {
                         variant="body1"
                         color="text.secondary"
                         mb={4}
-                        sx={{ fontSize: { xs: '0.9rem', sm: '1rem' }, px: { xs: 1, sm: 2, md: 0 } }}
+                        sx={{ fontSize: { xs: '0.9rem', sm: '1rem' }, px: { xs: 1, sm: 2, md: 0 },
+                        textAlign:{xs:'left'}
+                    }}
                     >
                         Take command of your financial future and transcend to the life you've always envisioned.
                         Unleash potential and master the art of investment with unparalleled ease and precision.
@@ -130,7 +126,7 @@ const Home = () => {
                     </Paper>
                 </Box>
 
-                {/* Right Side */}
+                
                 <Box sx={{ flex: 1, position: 'relative', textAlign: 'center', mt: { xs: 4, sm: 4, md: 0 } }}>
                     <img
                         src="/images/Rectangle.png"
@@ -151,7 +147,7 @@ const Home = () => {
                 </Box>
             </Box>
 
-            <Box sx={{ mt: 10, px: { xs: 2, sm: 4, md: 20 } }}>
+            <Box sx={{ mt: 10, px: {     sm: 4, md: 20 } }}>
                 {/* Heading + Description */}
                 <Box
                     sx={{
@@ -159,7 +155,7 @@ const Home = () => {
                         justifyContent: "space-between",
                         alignItems: 'center',
                         textAlign: { xs: 'center', md: 'left' },
-                        gap: { xs: 2, md: 4 },
+                        gap: { xs: 2, md: 2 },
                     }}
                 >
                     <Typography
@@ -268,7 +264,7 @@ const Home = () => {
             </Box>
 
 
-            <Box sx={{ px: { xs: 2, md: 20 } }}>
+            <Box sx={{ px: {  md: 20 } }}>
                 <Box
                     sx={{
                         mt: 10,
@@ -344,7 +340,7 @@ const Home = () => {
                 </Box>
             </Box>
 
-            <Box sx={{ mt: 10, textAlign: 'center', px: { xs: 2, md: 20 } }}>
+            <Box sx={{ mt: 10, textAlign: 'center', px: {  md: 20 } }}>
                 <Typography
                     variant="caption"
                     sx={{
@@ -417,7 +413,7 @@ const Home = () => {
                 </Box>
             </Box>
 
-            <Box sx={{ mt: 10, textAlign: 'center', px: { xs: 2, md: 20 } }}>
+            <Box sx={{ mt: 10, textAlign: 'center', px: { md: 20 } }}>
                 <Typography
                     variant="caption"
                     sx={{
@@ -473,7 +469,7 @@ const Home = () => {
                     display: 'flex',
                     flexDirection: { xs: 'column', md: 'row' },
                     gap: 4,
-                    px: { xs: 2, md: 20 },
+                    px: {  md: 20 },
                     mt: 10,
                 }}
             >
@@ -549,7 +545,7 @@ const Home = () => {
                 </Paper>
 
             </Box>
-            <Box sx={{ px: { xs: 2, md: 20 }, mt: 10 }}>
+            <Box sx={{ px: { md: 20 }, mt: 10 }}>
                 <Box
                     sx={{
                         height: 380,
@@ -574,7 +570,7 @@ const Home = () => {
                             overflow: 'hidden'
                         }}
                     />
-                    {/* Nội dung */}
+                    
                     <Box sx={{ position: 'relative', zIndex: 1, maxWidth: 600 }}>
                         <Typography variant="h4" fontWeight="bold" gutterBottom>
                             Unlock Exceptional Financial Gains

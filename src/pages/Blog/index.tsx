@@ -34,13 +34,34 @@ const Blog = () => {
     ]
 
     return (
-        <Box sx={{ px: { xs: 2, md: 8 }, py: { xs: 4, md: 2 } }}>
+        <Box >
             <Box
                 sx={{
                     display: 'flex',
-                    flexDirection: { xs: 'column', md: 'row' },
-                    alignItems: 'center',
-                    gap: 6,
+                    flexDirection: {
+                        xs: 'column', // iPhone
+                        sm: 'column', // iPad
+                        md: 'row', // Desktop
+                    },
+                    alignItems: {
+                        xs: 'center',
+                        sm: 'center',
+                        md: 'flex-start',
+                    },
+                    gap: {
+                        xs: 4,
+                        sm: 5,
+                        md: 6,
+                    },
+                    px: {
+                        sm: 4,
+                        md: 8,
+                    },
+                    py: {
+                        xs: 4,
+                        sm: 6,
+                        md: 8,
+                    },
                 }}
             >
                 {/* Left side - Text content */}
@@ -63,7 +84,7 @@ const Blog = () => {
                 </Box>
             </Box>
 
-            <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, px: { xs: 2, md: 20 }, gap: 6, mt: 10 }}>
+            <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, px: { md: 20 }, gap: 6, mt: 10 }}>
                 {/* Danh sách bài viết bên trái */}
                 <Box sx={{ flex: 3, display: 'flex', flexDirection: 'column', gap: 4 }}>
                     {boxContent.map((post, index) => (
@@ -141,7 +162,7 @@ const Blog = () => {
             </Box>
 
 
-            <Box sx={{ px: { xs: 2, md: 20 }, mt: 10 }}>
+            <Box sx={{ px: { md: 20 }, mt: 10 }}>
                 <Box
                     sx={{
                         height: 380,

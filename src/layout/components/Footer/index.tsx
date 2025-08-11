@@ -27,7 +27,7 @@ const Footer = () => {
     },
   ]
   return (
-    <Box sx={{ py: 8, px: {xs:2,  md: 20 }, backgroundColor: '#fff', width:'100%' , maxWidth:{xs:'350px',md:'800px'},mx:'auto'}}>
+    <Box sx={{ py: 8, px: {  md: 30 }, backgroundColor: '#fff', width:'100%' , maxWidth:{xs:'340px',md:'780px'},mx:'auto'}}>
       <Stack direction={{ xs: 'column', md: 'row' }} spacing={6} justifyContent="space-between">
 
         <Box>

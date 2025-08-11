@@ -50,13 +50,34 @@ const Opportunities = () => {
         },
     ];
     return (
-        <Box sx={{ px: { xs: 2, md: 8 }, py: { xs: 4, md: 2 },width:'100%' , maxWidth:'1100px',mx:'auto' }}>
+        <Box sx={{ }}>
             <Box
                 sx={{
                     display: 'flex',
-                    flexDirection: { xs: 'column', md: 'row' },
-                    alignItems: 'center',
-                    gap: 6,
+                    flexDirection: {
+                        xs: 'column', // iPhone
+                        sm: 'column', // iPad
+                        md: 'row', // Desktop
+                    },
+                    alignItems: {
+                        xs: 'center',
+                        sm: 'center',
+                        md: 'flex-start',
+                    },
+                    gap: {
+                        xs: 4,
+                        sm: 5,
+                        md: 6,
+                    },
+                    px: {
+                        sm: 4,
+                        md: 8,
+                    },
+                    py: {
+                        xs: 4,
+                        sm: 6,
+                        md: 8,
+                    },
                 }}
             >
                 {/* Left side - Text content */}
@@ -78,7 +99,7 @@ const Opportunities = () => {
                     />
                 </Box>
             </Box>
-            <Box sx={{ mt: 10, px: { xs: 2, md: 20 } }}>
+            <Box sx={{ mt: 10, px: { md: 20 } }}>
                 <Box
                     sx={{
                         display: 'flex',

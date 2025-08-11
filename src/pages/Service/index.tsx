@@ -8,29 +8,49 @@ import {
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import ModeStandbyIcon from '@mui/icons-material/ModeStandby';
 function Services() {
-    const content:string[] = 
+    const content: string[] =
         [
-        'Investment Advisory',
-        'Portfolio Management',
-        'Mutual Funds and ETFs',
-        'Financial Planning',
-        'Wealth Management',
-        'Retirement Solutions',
-        'Educational Resources',
-        'Client Reporting',
-        'Customer Support',
-      ]
+            'Investment Advisory',
+            'Portfolio Management',
+            'Mutual Funds and ETFs',
+            'Financial Planning',
+            'Wealth Management',
+            'Retirement Solutions',
+            'Educational Resources',
+            'Client Reporting',
+            'Customer Support',
+        ]
     return (
-        <Box sx={{ px: { xs: 2, md: 8 }, py: { xs: 4, md: 2 } ,width:'100%' , maxWidth:'1100px',mx:'auto'}}>
+        <Box sx={{}}>
             <Box
                 sx={{
                     display: 'flex',
-                    flexDirection: { xs: 'column', md: 'row' },
-                    alignItems: 'center',
-                    gap: 6,
+                    flexDirection: {
+                        xs: 'column', // iPhone
+                        sm: 'column', // iPad
+                        md: 'row', // Desktop
+                    },
+                    alignItems: {
+                        xs: 'center',
+                        sm: 'center',
+                        md: 'flex-start',
+                    },
+                    gap: {
+                        xs: 4,
+                        sm: 5,
+                        md: 6,
+                    },
+                    px: {
+                        sm: 4,
+                        md: 8,
+                    },
+                    py: {
+                        xs: 4,
+                        sm: 6,
+                        md: 8,
+                    },
                 }}
             >
-                {/* Left side - Text content */}
                 <Box sx={{ flex: 1 }}>
                     <Typography variant="h3" fontWeight="bold" gutterBottom>
                         Services
@@ -55,7 +75,7 @@ function Services() {
             <Box
                 sx={{
                     mt: 10,
-                    px: { xs: 2, md: 20 },
+                    px: {  md: 20 },
                     display: 'flex',
                     flexDirection: { xs: 'column', md: 'row' },
                     alignItems: 'flex-start',
@@ -63,7 +83,6 @@ function Services() {
                     // width:'100%'
                 }}
             >
-                {/* Left side - text content */}
                 <Box sx={{ flex: 1 }}>
                     <Typography variant="h4" fontWeight="bold" gutterBottom>
                         Expert Guidance for Optimal Investments
@@ -105,29 +124,30 @@ function Services() {
                         backgroundColor: '#f2f4f8',
                         borderRadius: 4,
                         p: 3,
-                        margin:0
+                        width:{xs:'85%'},
+                        margin: 0
                     }}
                 >
-                    {content.map((i,index)=>(
+                    {content.map((i, index) => (
                         <Box
-                        key={index}
-                        sx={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            borderBottom: index !== 8 ? '1px solid #ccc' : 'none',
-                            py: 1.5,
-                            gap: 2
-                        }}
-                    >
+                            key={index}
+                            sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                borderBottom: index !== 8 ? '1px solid #ccc' : 'none',
+                                py: 1.5,
+                                gap: 2
+                            }}
+                        >
 
-                        <ModeStandbyIcon />
-                        <Typography variant="body1">{i}</Typography>
-                    </Box>
+                            <ModeStandbyIcon />
+                            <Typography variant="body1">{i}</Typography>
+                        </Box>
                     ))}
                 </Paper>
             </Box>
 
-            <Box sx={{ px: { xs: 2, md: 20 } }}>
+            <Box sx={{ px: { md: 20 } }}>
                 <Box
                     sx={{
                         mt: 10,
@@ -204,7 +224,7 @@ function Services() {
             </Box>
 
 
-            <Box sx={{ mt: 10, textAlign: 'center', px: { xs: 2, md: 20 } }}>
+            <Box sx={{ mt: 10, textAlign: 'center', px: {  md: 20 } }}>
                 <Typography
                     variant="caption"
                     sx={{
@@ -227,7 +247,7 @@ function Services() {
                 <Typography variant="body1" color="text.secondary" mb={4}>
                     Navigate through the global investment landscape with our expert guidance, ensuring every decision is calculated and potent.F                </Typography>
 
-                <Box sx={{ maxWidth: { md: 250 }, mb: 4, display: 'flex', flexDirection: { xs: 'column', md: 'row' }, justifyContent: 'space-between', gap: 4 }}>
+                <Box sx={{ maxWidth: { md: 250 }, mb: 4, display: 'flex', flexDirection: { xs: 'column', md: 'row' }, justifyContent: 'space-between', gap: 2 }}>
                     <img
                         src="/images/Frame 48.png"
                         alt="Investment discussion"
